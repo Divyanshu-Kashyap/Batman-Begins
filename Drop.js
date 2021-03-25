@@ -1,16 +1,16 @@
 class Drop {
     constructor(x,y){
         var options ={
-            friction:1.01,
+            friction:0.001,
             restitution:0.1
         }
         this.rain = Bodies.circle(x,y,5,options)
-        this.radius = 4;
+        this.radius = 3;
         World.add(world,this.rain);
     }
     updateY(){
-        if(this.rain.position.y>1000){
-            Matter.Body.setPosition(this.rain,{x:random(0,400),y:random(0,400)})
+        if(this.rain.position.y>800){
+            Matter.Body.setPosition(this.rain,{x:random(0,400),y:random(0,600)})
         }
     }
 

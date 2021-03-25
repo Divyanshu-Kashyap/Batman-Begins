@@ -19,11 +19,11 @@ function setup(){
    engine = Engine.create();
    world = engine.world;
    createCanvas(400,650);
-   umbrella = new Umbrella(200,450);
-   if(frameCount%10===0){
+   umbrella = new Umbrella(200,500);
+   if(frameCount%400===0){
       for(var i = 0; i<maxDrops;i++)
-      drops.push(new Drop(random(0,400),random(0,400)))
-      pop();
+      drops.push(new Drop(random(0,400),random(0,350)))
+      
    }
     
 }
@@ -32,8 +32,8 @@ function draw(){
     Engine.update(engine);
     background(0);
 
-    rand = Math.round(random(1,4))
-    if(frameCount%100===0){
+    rand = Math.round(random(1.4))
+    if(frameCount%80===0){
         thunderCreatedFrame = frameCount
         thunder = createSprite(random(10,370),random(10,30),10,10)
         switch(rand){
@@ -57,5 +57,5 @@ function draw(){
         drops[i].showDrop();
         drops[i].updateY();
     }
-    drawSprites();
+      drawSprites();
 }
